@@ -21,32 +21,66 @@
             100% {background-position: 0% 50%;}
         }
 
+        h1 {
+            text-shadow: 0px 0px 20px #ef4444;
+        }
+
+        h2 {
+            color: #f43f5e;
+        }
+
         .box {
-            background: #1e293b;
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
             margin: 20px;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0px 0px 25px rgba(239, 68, 68, 0.2);
             position: relative;
             z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
         }
 
         button {
             padding: 10px 20px;
             border: none;
-            background: #ef4444;
+            background: linear-gradient(45deg, #ef4444, #f43f5e);
             color: white;
             border-radius: 10px;
             cursor: pointer;
             margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 0px 15px rgba(239,68,68,0.5);
         }
 
-        img {
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 25px rgba(239,68,68,0.9);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 200px;
             border-radius: 20px;
-            margin-top: 15px;
             border: 3px solid #ef4444;
             box-shadow: 0px 0px 20px #ef4444;
-            position: relative;
-            z-index: 2;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1) rotate(2deg);
         }
 
         #typing {
@@ -58,78 +92,55 @@
 
 <body>
 
-<!-- 🎧 MUSIC -->
 <audio id="bgmusic" loop>
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- ⌨️ TYPING INTRO -->
 <h2 id="typing"></h2>
 
 <h1>🚨 Official Website of Dolly 🚨</h1>
 <p>“Main character… just in the wrong genre” 🎬</p>
 
-<!-- 📜 SCROLLING TEXT -->
-<marquee behavior="scroll" direction="left" scrollamount="8">
-🚨 ALERT: Certified Delulu Graduate 🎓 | Red Flag Collector 🚩 | Emotional damage loading... 💀
+<marquee scrollamount="8">
+🚨 ALERT: Certified Delulu Graduate 🎓 | Red Flag Collector 🚩 | Emotional damage loading 💀
 </marquee>
 
-<!-- 🖼️ IMAGE -->
-<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
+<!-- 🖼️ IMAGE GALLERY -->
+<div class="gallery">
+    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
+    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
+    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
+    <img src="dolly2.jpeg">
+    <img src="dolly3.jpeg">
+</div>
 
 <p>⚠️ Highly Delulu Individual Detected ⚠️</p>
 
-<!-- 🎧 BUTTON -->
 <button onclick="playMusic()">🎧 Start Vibes</button>
 
 <div class="box">
 <h2>🏆 Titles Earned</h2>
 <p>🎓 Certified Delulu Graduate</p>
-<p>🚩 Red Flag Collector (Limited Edition)</p>
-<p>🎭 Main Character in Wrong Genre Movie</p>
+<p>🚩 Red Flag Collector</p>
+<p>🎭 Main Character Wrong Genre</p>
 </div>
 
 <div class="box">
 <h2>🐞 Bug Report</h2>
-<p>- Attracted to red flags like it's a career 🚩</p>
-<p>- Falls for bare minimum efforts</p>
-<p>- Trust issues + attachment issues combo pack</p>
+<p>- Attracted to red flags 🚩</p>
+<p>- Trust issues + attachment issues</p>
 <p>- Angry bird mode 🐦</p>
 <p>- Gullible Pro Max</p>
-<p><b>Status:</b> Devs gave up</p>
 </div>
 
 <div class="box">
-<h2>🚀 Features</h2>
-<p>- Broken but still romantic 🤡</p>
-<p>- Overthinks at 2 AM</p>
-<p>- “I’m done” but never done</p>
-<p>- Delulu is the only solulu ✨</p>
-<p>- Ignores red flags professionally</p>
-</div>
-
-<div class="box">
-<h2>📉 Performance Stats</h2>
+<h2>📉 Stats</h2>
 <p>Decision Making: 2%</p>
-<p>Trusting Wrong People: 100%</p>
 <p>Self Control: Error 404</p>
-<p>Healing Progress: Buffering...</p>
-</div>
-
-<div class="box">
-<h2>🎮 Fix Life Button</h2>
-<button onclick="lifeFix()">Fix My Life</button>
-<p id="lifeMsg"></p>
-</div>
-
-<div class="box">
-<h2>🎁 Do Not Click</h2>
-<button onclick="showMessage()">DO NOT CLICK ❌</button>
-<p id="msg"></p>
+<p>Healing: Buffering...</p>
 </div>
 
 <script>
-// 🎬 typing effect
 let text = "Initializing Dolly 2.0...";
 let i = 0;
 function typeEffect() {
@@ -141,58 +152,13 @@ function typeEffect() {
 }
 typeEffect();
 
-// 💌 message
-function showMessage() {
-    document.getElementById("msg").innerHTML =
-    "Okay okay… jokes apart. Life was fun with you around. Happy Birthday Dolly ❤️";
-}
-
-// 🎮 life fix
-function lifeFix() {
-    let responses = [
-        "No improvement detected 😌",
-        "Try again next year",
-        "Too much delusion to fix",
-        "System crashed 💀",
-        "Red flag ignored successfully 🚩"
-    ];
-    let random = responses[Math.floor(Math.random() * responses.length)];
-    document.getElementById("lifeMsg").innerHTML = random;
-}
-
-// 🎧 music
 function playMusic() {
     document.getElementById("bgmusic").play();
 }
 
-// autoplay on first click
 document.body.addEventListener('click', function () {
     document.getElementById("bgmusic").play();
 }, { once: true });
-
-// 🌌 particles
-for (let i = 0; i < 40; i++) {
-    let bubble = document.createElement("div");
-    bubble.style.position = "fixed";
-    bubble.style.width = "10px";
-    bubble.style.height = "10px";
-    bubble.style.background = ["#ef4444","#ff4d6d","#f43f5e"][Math.floor(Math.random()*3)];
-    bubble.style.borderRadius = "50%";
-    bubble.style.left = Math.random() * window.innerWidth + "px";
-    bubble.style.top = Math.random() * window.innerHeight + "px";
-    bubble.style.opacity = "0.5";
-    bubble.style.animation = `float ${3 + Math.random() * 5}s infinite`;
-    document.body.appendChild(bubble);
-}
-
-let style = document.createElement('style');
-style.innerHTML = `
-@keyframes float {
-    0% { transform: translateY(0px); opacity: 0.5; }
-    50% { transform: translateY(-100px); opacity: 1; }
-    100% { transform: translateY(0px); opacity: 0.5; }
-}`;
-document.head.appendChild(style);
 </script>
 
 </body>
