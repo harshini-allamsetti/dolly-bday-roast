@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dolly 2.0</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .box {
+            background: #1e293b;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #ef4444;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        img {
+            border-radius: 20px;
+            margin-top: 15px;
+            border: 3px solid #ef4444;
+            box-shadow: 0px 0px 20px #ef4444;
+            position: relative;
+            z-index: 2;
+        }
+
+        #typing {
+            color: #ef4444;
+            text-shadow: 0px 0px 10px #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- 🎧 MUSIC -->
+<audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- ⌨️ TYPING INTRO -->
+<h2 id="typing"></h2>
+
+<h1>🚨 Official Website of Dolly 🚨</h1>
+<p>“Main character… just in the wrong genre” 🎬</p>
+
+<!-- 📜 SCROLLING TEXT -->
+<marquee behavior="scroll" direction="left" scrollamount="8">
+🚨 ALERT: Certified Delulu Graduate 🎓 | Red Flag Collector 🚩 | Emotional damage loading... 💀
+</marquee>
+
+<!-- 🖼️ IMAGE -->
+<img src="dolly.jpeg" width="220">
+
+<p>⚠️ Highly Delulu Individual Detected ⚠️</p>
+
+<!-- 🎧 BUTTON -->
+<button onclick="playMusic()">🎧 Start Vibes</button>
+
+<div class="box">
+<h2>🏆 Titles Earned</h2>
+<p>🎓 Certified Delulu Graduate</p>
+<p>🚩 Red Flag Collector (Limited Edition)</p>
+<p>🎭 Main Character in Wrong Genre Movie</p>
+</div>
+
+<div class="box">
+<h2>🐞 Bug Report</h2>
+<p>- Attracted to red flags like it's a career 🚩</p>
+<p>- Falls for bare minimum efforts</p>
+<p>- Trust issues + attachment issues combo pack</p>
+<p>- Angry bird mode 🐦</p>
+<p>- Gullible Pro Max</p>
+<p><b>Status:</b> Devs gave up</p>
+</div>
+
+<div class="box">
+<h2>🚀 Features</h2>
+<p>- Broken but still romantic 🤡</p>
+<p>- Overthinks at 2 AM</p>
+<p>- “I’m done” but never done</p>
+<p>- Delulu is the only solulu ✨</p>
+<p>- Ignores red flags professionally</p>
+</div>
+
+<div class="box">
+<h2>📉 Performance Stats</h2>
+<p>Decision Making: 2%</p>
+<p>Trusting Wrong People: 100%</p>
+<p>Self Control: Error 404</p>
+<p>Healing Progress: Buffering...</p>
+</div>
+
+<div class="box">
+<h2>🎮 Fix Life Button</h2>
+<button onclick="lifeFix()">Fix My Life</button>
+<p id="lifeMsg"></p>
+</div>
+
+<div class="box">
+<h2>🎁 Do Not Click</h2>
+<button onclick="showMessage()">DO NOT CLICK ❌</button>
+<p id="msg"></p>
+</div>
+
+<script>
+// 🎬 typing effect
+let text = "Initializing Dolly 2.0...";
+let i = 0;
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 80);
+    }
+}
+typeEffect();
+
+// 💌 message
+function showMessage() {
+    document.getElementById("msg").innerHTML =
+    "Okay okay… jokes apart. Life was fun with you around. Happy Birthday Dolly ❤️";
+}
+
+// 🎮 life fix
+function lifeFix() {
+    let responses = [
+        "No improvement detected 😌",
+        "Try again next year",
+        "Too much delusion to fix",
+        "System crashed 💀",
+        "Red flag ignored successfully 🚩"
+    ];
+    let random = responses[Math.floor(Math.random() * responses.length)];
+    document.getElementById("lifeMsg").innerHTML = random;
+}
+
+// 🎧 music
+function playMusic() {
+    document.getElementById("bgmusic").play();
+}
+
+// autoplay on first click
+document.body.addEventListener('click', function () {
+    document.getElementById("bgmusic").play();
+}, { once: true });
+
+// 🌌 particles
+for (let i = 0; i < 40; i++) {
+    let bubble = document.createElement("div");
+    bubble.style.position = "fixed";
+    bubble.style.width = "10px";
+    bubble.style.height = "10px";
+    bubble.style.background = ["#ef4444","#ff4d6d","#f43f5e"][Math.floor(Math.random()*3)];
+    bubble.style.borderRadius = "50%";
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+    bubble.style.top = Math.random() * window.innerHeight + "px";
+    bubble.style.opacity = "0.5";
+    bubble.style.animation = `float ${3 + Math.random() * 5}s infinite`;
+    document.body.appendChild(bubble);
+}
+
+let style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); opacity: 0.5; }
+    50% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 0.5; }
+}`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
