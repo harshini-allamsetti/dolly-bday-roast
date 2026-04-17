@@ -1,99 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dolly 2.0</title>
+<title>Dolly 2.0</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            overflow-x: hidden;
-        }
+<style>
+body {
+    font-family: Arial;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #020617, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    overflow-x: hidden;
+}
 
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
-        h1 {
-            text-shadow: 0px 0px 20px #ef4444;
-        }
+h1 { text-shadow: 0px 0px 20px #ef4444; }
+h2 { color: #f43f5e; }
 
-        h2 {
-            color: #f43f5e;
-        }
+.box {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0px 0px 25px rgba(239, 68, 68, 0.2);
+    transition: transform 0.3s ease;
+}
 
-        .box {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0px 0px 25px rgba(239, 68, 68, 0.2);
-            position: relative;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
+.box:hover {
+    transform: scale(1.05);
+}
 
-        .box:hover {
-            transform: scale(1.05);
-        }
+button {
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(45deg, #ef4444, #f43f5e);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(239,68,68,0.5);
+}
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: linear-gradient(45deg, #ef4444, #f43f5e);
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            margin: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0px 0px 15px rgba(239,68,68,0.5);
-        }
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(239,68,68,0.9);
+}
 
-        button:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 25px rgba(239,68,68,0.9);
-        }
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .gallery {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+.gallery img {
+    width: 200px;
+    border-radius: 20px;
+    border: 3px solid #ef4444;
+    box-shadow: 0px 0px 20px #ef4444;
+    transition: transform 0.4s ease;
+}
 
-        .gallery img {
-            width: 200px;
-            border-radius: 20px;
-            border: 3px solid #ef4444;
-            box-shadow: 0px 0px 20px #ef4444;
-            transition: transform 0.4s ease;
-        }
+.gallery img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
 
-        .gallery img:hover {
-            transform: scale(1.1) rotate(2deg);
-        }
-
-        #typing {
-            color: #ef4444;
-            text-shadow: 0px 0px 10px #ef4444;
-        }
-    </style>
+#typing {
+    color: #ef4444;
+    text-shadow: 0px 0px 10px #ef4444;
+}
+</style>
 </head>
 
 <body>
 
 <audio id="bgmusic" loop>
-    <source src="music.mp3" type="audio/mp3">
+<source src="music.mp3" type="audio/mp3">
 </audio>
 
 <h2 id="typing"></h2>
@@ -102,17 +94,15 @@
 <p>“Main character… just in the wrong genre” 🎬</p>
 
 <marquee scrollamount="8">
-🚨 ALERT: Certified Delulu Graduate 🎓 | Red Flag Collector 🚩 | Emotional damage loading 💀
+🚨 Certified Delulu Graduate 🎓 | Red Flag Collector 🚩 | Emotional Damage Loading 💀
 </marquee>
 
-<!-- 🖼️ IMAGE GALLERY -->
 <div class="gallery">
-    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
+ <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
     <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly2.jpeg" width="220">
     <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly3.jpeg" width="220">
     <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly4.jpeg" width="220">
     <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly5.jpeg" width="220">
-  
 </div>
 
 <p>⚠️ Highly Delulu Individual Detected ⚠️</p>
@@ -123,7 +113,7 @@
 <h2>🏆 Titles Earned</h2>
 <p>🎓 Certified Delulu Graduate</p>
 <p>🚩 Red Flag Collector</p>
-<p>🎭 Main Character Wrong Genre</p>
+<p>🎭 Wrong Genre Main Character</p>
 </div>
 
 <div class="box">
@@ -135,13 +125,27 @@
 </div>
 
 <div class="box">
-<h2>📉 Stats</h2>
+<h2>📉 Performance Stats</h2>
 <p>Decision Making: 2%</p>
+<p>Trusting Wrong People: 100%</p>
 <p>Self Control: Error 404</p>
-<p>Healing: Buffering...</p>
+<p>Healing Progress: Buffering...</p>
+</div>
+
+<div class="box">
+<h2>🎮 Fix Life Button</h2>
+<button onclick="lifeFix()">Fix My Life</button>
+<p id="lifeMsg"></p>
+</div>
+
+<div class="box">
+<h2>🎁 Do Not Click</h2>
+<button onclick="showMessage()">DO NOT CLICK ❌</button>
+<p id="msg"></p>
 </div>
 
 <script>
+// typing
 let text = "Initializing Dolly 2.0...";
 let i = 0;
 function typeEffect() {
@@ -153,13 +157,56 @@ function typeEffect() {
 }
 typeEffect();
 
+// music
 function playMusic() {
     document.getElementById("bgmusic").play();
 }
-
 document.body.addEventListener('click', function () {
     document.getElementById("bgmusic").play();
 }, { once: true });
+
+// life fix
+function lifeFix() {
+    let responses = [
+        "No improvement detected 😌",
+        "Still choosing red flags 🚩",
+        "System crashed 💀",
+        "Delulu level too high",
+        "Beyond repair 😭"
+    ];
+    document.getElementById("lifeMsg").innerHTML =
+        responses[Math.floor(Math.random() * responses.length)];
+}
+
+// message
+function showMessage() {
+    document.getElementById("msg").innerHTML =
+    "Okay jokes apart… life was actually fun with you around ❤️ Happy Birthday Dolly";
+}
+
+// particles
+for (let i = 0; i < 40; i++) {
+    let bubble = document.createElement("div");
+    bubble.style.position = "fixed";
+    bubble.style.width = "10px";
+    bubble.style.height = "10px";
+    bubble.style.background = ["#ef4444","#ff4d6d","#f43f5e"][Math.floor(Math.random()*3)];
+    bubble.style.borderRadius = "50%";
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+    bubble.style.top = Math.random() * window.innerHeight + "px";
+    bubble.style.opacity = "0.5";
+    bubble.style.animation = `float ${3 + Math.random()*5}s infinite`;
+    document.body.appendChild(bubble);
+}
+
+let style = document.createElement('style');
+style.innerHTML = `
+@keyframes float {
+    0% { transform: translateY(0px); opacity: 0.5; }
+    50% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 0.5; }
+}`;
+document.head.appendChild(style);
 </script>
 
 </body>
