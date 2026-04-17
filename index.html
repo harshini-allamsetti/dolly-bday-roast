@@ -115,11 +115,11 @@ button:hover {
 </marquee>
 
 <div class="gallery">
- <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg" width="220">
-    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly2.jpeg" width="220">
-    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly3.jpeg" width="220">
-    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly4.jpeg" width="220">
-    <img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly5.jpeg" width="220">
+<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly.jpeg">
+<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly2.jpeg">
+<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly3.jpeg">
+<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly4.jpeg">
+<img src="https://harshini-allamsetti.github.io/dolly-bday-roast/dolly5.jpeg">
 </div>
 
 <p>⚠️ Highly Delulu Individual Detected ⚠️</p>
@@ -160,8 +160,6 @@ button:hover {
 <button onclick="showMessage()">DO NOT CLICK ❌</button>
 <p id="msg"></p>
 </div>
-
-<!-- NEW CREATIVE BOXES -->
 
 <div class="box">
 <h2>💔 Love Prediction AI</h2>
@@ -214,7 +212,7 @@ document.body.addEventListener('click', function () {
     document.getElementById("bgmusic").play();
 }, { once: true });
 
-// existing buttons
+// buttons
 function lifeFix() {
     let responses = ["No improvement 😌","Still choosing red flags 🚩","System crashed 💀","Delulu high","Beyond repair 😭"];
     document.getElementById("lifeMsg").innerHTML = responses[Math.floor(Math.random()*responses.length)];
@@ -225,7 +223,6 @@ function showMessage() {
     "Okay jokes apart… life was fun with you around ❤️ Happy Birthday Dolly";
 }
 
-// new features
 function predictLove() {
     let msgs = ["Next red flag incoming 🚩","Love life loading...","Same mistake again 💀","Emotional damage ahead","No update"];
     document.getElementById("loveMsg").innerHTML = msgs[Math.floor(Math.random()*msgs.length)];
@@ -251,29 +248,38 @@ function reality() {
     document.getElementById("realityMsg").innerHTML = msgs[Math.floor(Math.random()*msgs.length)];
 }
 
-// particles
-for (let i = 0; i < 40; i++) {
+// 🌈 colorful bubbles
+for (let i = 0; i < 60; i++) {
     let bubble = document.createElement("div");
+    let size = Math.random() * 20 + 10;
+
     bubble.style.position = "fixed";
-    bubble.style.width = "10px";
-    bubble.style.height = "10px";
-    bubble.style.background = ["#ef4444","#ff4d6d","#f43f5e"][Math.floor(Math.random()*3)];
+    bubble.style.width = size + "px";
+    bubble.style.height = size + "px";
+    bubble.style.background = `radial-gradient(circle,
+        rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.9),
+        rgba(255,255,255,0.1))`;
+
     bubble.style.borderRadius = "50%";
     bubble.style.left = Math.random() * window.innerWidth + "px";
     bubble.style.top = Math.random() * window.innerHeight + "px";
-    bubble.style.opacity = "0.8";
-    bubble.style.animation = `float ${3 + Math.random()*5}s infinite`;
+    bubble.style.opacity = "0.7";
+    bubble.style.boxShadow = "0px 0px 20px rgba(255,255,255,0.5)";
+
+    let duration = 5 + Math.random() * 10;
+    bubble.style.animation = `bubbleMove ${duration}s linear infinite`;
+
     document.body.appendChild(bubble);
 }
 
-let style = document.createElement('style');
-style.innerHTML = `
-@keyframes float {
-    0% { transform: translateY(0px) scale(1); opacity: 0.6; }
-    50% { transform: translateY(-150px) scale(1.3); opacity: 1; }
-    100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+let bubbleStyle = document.createElement('style');
+bubbleStyle.innerHTML = `
+@keyframes bubbleMove {
+    0% { transform: translateY(0px) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-200px) scale(1.3); opacity: 1; }
+    100% { transform: translateY(0px) scale(1); opacity: 0.7; }
 }`;
-document.head.appendChild(style);
+document.head.appendChild(bubbleStyle);
 </script>
 
 </body>
